@@ -2,11 +2,11 @@ from decimal import Decimal
 
 from ..base import generate_metric_units, MetricTransform, Dimension
 
-meter_to_meter = MetricTransform(
+gram_to_gram = MetricTransform(
     to_metric=Decimal("1"),
-    dimension=Dimension.length,
+    dimension=Dimension.mass,
 )
 
-for unit in generate_metric_units(name='meter', abbrev='m', metric_transform=meter_to_meter):
+for unit in generate_metric_units(name='gram', abbrev='g', metric_transform=gram_to_gram):
     globals()[unit.name] = unit
 

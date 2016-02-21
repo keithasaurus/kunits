@@ -2,11 +2,11 @@ from decimal import Decimal
 
 from ..base import generate_metric_units, MetricTransform, Dimension
 
-meter_to_meter = MetricTransform(
+liter_to_liter = MetricTransform(
     to_metric=Decimal("1"),
-    dimension=Dimension.length,
+    dimension=Dimension.volume,
 )
 
-for unit in generate_metric_units(name='meter', abbrev='m', metric_transform=meter_to_meter):
+for unit in generate_metric_units(name='liter', abbrev='l', metric_transform=liter_to_liter):
     globals()[unit.name] = unit
 
