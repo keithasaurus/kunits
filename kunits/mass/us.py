@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from units.base import MetricTransform, Dimension, Unit
+from kunits.base import MetricTransform, Dimension, Unit
 
 us_pound_to_gram = MetricTransform(
     to_metric=Decimal('453.59237'),

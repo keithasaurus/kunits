@@ -2,9 +2,9 @@ import unittest
 from decimal import Decimal
 from typing import NamedTuple
 
-from units.convert import convert_unit
-from units.base import Unit
-from units.volume import us as volume_us
+from kunits.convert import convert_unit
+from kunits.base import Unit
+from kunits.volume import us as volume_us
 
 ConversionFactor = NamedTuple("ConversionFactor", (
     ("expected_result", Decimal),
