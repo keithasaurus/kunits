@@ -7,6 +7,5 @@ gram_to_gram = MetricTransform(
     dimension=Dimension.mass,
 )
 
-for unit in generate_metric_units(name='gram', abbrev='g', metric_transform=gram_to_gram):
-    globals()[unit.name] = unit
+units = generate_metric_units(name='gram', abbrev='g', metric_transform=gram_to_gram)
 

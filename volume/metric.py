@@ -7,6 +7,5 @@ liter_to_liter = MetricTransform(
     dimension=Dimension.volume,
 )
 
-for unit in generate_metric_units(name='liter', abbrev='l', metric_transform=liter_to_liter):
-    globals()[unit.name] = unit
+units = generate_metric_units(name='liter', abbrev='l', metric_transform=liter_to_liter)
 

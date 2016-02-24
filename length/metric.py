@@ -7,6 +7,5 @@ meter_to_meter = MetricTransform(
     dimension=Dimension.length,
 )
 
-for unit in generate_metric_units(name='meter', abbrev='m', metric_transform=meter_to_meter):
-    globals()[unit.name] = unit
+units = generate_metric_units(name='meter', abbrev='m', metric_transform=meter_to_meter)
 

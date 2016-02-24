@@ -24,7 +24,7 @@ Unit = NamedTuple('Unit', (
 ))
 
 
-def generate_metric_units(name: str, abbrev: str, metric_transform: MetricTransform) -> Tuple[Unit,...]:
+def generate_metric_units(name: str, abbrev: str, metric_transform: MetricTransform) -> Tuple[Unit, ...]:
     return tuple(
         Unit(
             name="{}{}".format(prefix, name),

@@ -5,6 +5,8 @@ from typing import NamedTuple
 from kunits.convert import convert_unit
 from kunits.base import Unit
 from kunits.volume import us as volume_us
+from kunits.registry import unit_registry
+
 
 ConversionFactor = NamedTuple("ConversionFactor", (
     ("expected_result", Decimal),
@@ -17,12 +19,12 @@ class UnitsTestCase(unittest.TestCase):
 
     def test_us_volume_units(self):
         test_conversions = (
-            ConversionFactor(Decimal(4), volume_us.gallon, volume_us.quart),
-            ConversionFactor(Decimal(2), volume_us.pint, volume_us.cup),
-            ConversionFactor(Decimal(4), volume_us.quart, volume_us.cup),
-            ConversionFactor(Decimal(16), volume_us.cup, volume_us.tablespoon),
-            ConversionFactor(Decimal(3), volume_us.tablespoon, volume_us.teaspoon),
-            ConversionFactor(Decimal(80), volume_us.teaspoon, volume_us.minim),
+            ConversionFactor(Decimal(4), unit_registry['us_gallon'], unit_registry['us_quart']),
+            ConversionFactor(Decimal(2), unit_registry['us_pint'], unit_registry['us_cup']),
+            ConversionFactor(Decimal(4), unit_registry['us_quart'], unit_registry['us_cup']),
+            ConversionFactor(Decimal(16), unit_registry['us_cup'], unit_registry['tablespoon']),
+            ConversionFactor(Decimal(3), unit_registry['tablespoon'], unit_registry['teaspoon']),
+            ConversionFactor(Decimal(80), unit_registry['teaspoon'], unit_registry['minim']),
         )
 
         for result, from_unit, to_unit in test_conversions:
