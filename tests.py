@@ -17,12 +17,12 @@ class UnitsTestCase(unittest.TestCase):
 
     def test_us_volume_units(self):
         test_conversions = (
-            ConversionFactor(Decimal(4), unit_registry['us_gallon'], unit_registry['us_quart']),
-            ConversionFactor(Decimal(2), unit_registry['us_pint'], unit_registry['us_cup']),
-            ConversionFactor(Decimal(4), unit_registry['us_quart'], unit_registry['us_cup']),
-            ConversionFactor(Decimal(16), unit_registry['us_cup'], unit_registry['tablespoon']),
-            ConversionFactor(Decimal(3), unit_registry['tablespoon'], unit_registry['teaspoon']),
-            ConversionFactor(Decimal(80), unit_registry['teaspoon'], unit_registry['minim']),
+            ConversionFactor(Decimal(4), unit_registry['gallon_us'], unit_registry['quart_us']),
+            ConversionFactor(Decimal(2), unit_registry['pint_us'], unit_registry['cup_us']),
+            ConversionFactor(Decimal(4), unit_registry['quart_us'], unit_registry['cup_us']),
+            ConversionFactor(Decimal(16), unit_registry['cup_us'], unit_registry['tablespoon_us']),
+            ConversionFactor(Decimal(3), unit_registry['tablespoon_us'], unit_registry['teaspoon_us']),
+            ConversionFactor(Decimal(80), unit_registry['teaspoon_us'], unit_registry['minim_us']),
         )
 
         for result, from_unit, to_unit in test_conversions:

@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import NamedTuple, Tuple
+from typing import NamedTuple, Tuple, Dict
 
 from decimal import Decimal
 
@@ -22,6 +22,10 @@ Unit = NamedTuple('Unit', (
     ('transform_multiple', Decimal),
     ('metric_transform', MetricTransform)
 ))
+
+
+# formalize unit mapping
+UnitDict = Dict[str, Unit]
 
 
 def generate_metric_units(name: str, abbrev: str, metric_transform: MetricTransform) -> Tuple[Unit, ...]:

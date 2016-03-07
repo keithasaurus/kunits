@@ -1,5 +1,6 @@
 from decimal import Decimal
 
+from kunits.base import UnitDict
 from ..base import generate_metric_units, MetricTransform, Dimension
 
 liter_to_liter = MetricTransform(
@@ -7,5 +8,7 @@ liter_to_liter = MetricTransform(
     dimension=Dimension.volume,
 )
 
-units = generate_metric_units(name='liter', abbrev='l', metric_transform=liter_to_liter)
+units = {  # type: UnitDict
+    unit.name: unit for unit in generate_metric_units(name='liter', abbrev='l', metric_transform=liter_to_liter)
+}
 

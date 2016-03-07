@@ -1,5 +1,6 @@
 from decimal import Decimal
 
+from kunits.base import UnitDict
 from ..base import generate_metric_units, MetricTransform, Dimension
 
 meter_to_meter = MetricTransform(
@@ -7,5 +8,6 @@ meter_to_meter = MetricTransform(
     dimension=Dimension.length,
 )
 
-units = generate_metric_units(name='meter', abbrev='m', metric_transform=meter_to_meter)
-
+units = {  # type: UnitDict
+    unit.name: unit for unit in generate_metric_units(name='meter', abbrev='m', metric_transform=meter_to_meter)
+}

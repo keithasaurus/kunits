@@ -1,5 +1,6 @@
 from decimal import Decimal
 
+from kunits.base import UnitDict
 from ..base import generate_metric_units, MetricTransform, Dimension
 
 gram_to_gram = MetricTransform(
@@ -7,5 +8,6 @@ gram_to_gram = MetricTransform(
     dimension=Dimension.mass,
 )
 
-units = generate_metric_units(name='gram', abbrev='g', metric_transform=gram_to_gram)
-
+units = {  # type: UnitDict
+    unit.name: unit for unit in generate_metric_units(name='gram', abbrev='g', metric_transform=gram_to_gram)
+}

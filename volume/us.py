@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from ..base import MetricTransform, Dimension, Unit
+from ..base import MetricTransform, Dimension, Unit, UnitDict
 
 us_minim_to_liter = MetricTransform(
     to_metric=Decimal(".000061611519921875"),
@@ -9,19 +9,18 @@ us_minim_to_liter = MetricTransform(
 
 _ounce_minim_multiple = Decimal(480)
 
-units = (
-    Unit('minim', 'minims', 'min', Decimal(1), us_minim_to_liter),
-    Unit('US fluid dram', 'US fluid drams', 'fl dr', Decimal(60), us_minim_to_liter),
-    Unit('teaspoon', 'teaspoons', 'tsp', Decimal(80), us_minim_to_liter),
-    Unit('tablespoon', 'tablespoons', 'Tbsp', Decimal(240), us_minim_to_liter),
-    Unit('US fluid ounce', 'US fluid ounces', 'fl oz', Decimal(480), us_minim_to_liter),
-    Unit('US shot', 'US shots', 'jig', Decimal('1.5') * _ounce_minim_multiple, us_minim_to_liter),
-    Unit('US gill', 'US gills', 'gil', Decimal(4) * _ounce_minim_multiple, us_minim_to_liter),
-    Unit('US cup', 'US cups', 'cp', Decimal(8) * _ounce_minim_multiple, us_minim_to_liter),
-    Unit('US pint', 'US pints', 'pt', Decimal(16) * _ounce_minim_multiple, us_minim_to_liter),
-    Unit('US quart', 'US quarts', 'qt', Decimal(32) * _ounce_minim_multiple, us_minim_to_liter),
-    Unit('US gallon', 'US gallons', 'gal', Decimal(128) * _ounce_minim_multiple, us_minim_to_liter),
-    Unit('barrel', 'barrels', 'bbl', Decimal('31.5') * Decimal(128) * _ounce_minim_multiple, us_minim_to_liter),
-)
-
+units = {  # type: UnitDict
+    'minim_us': Unit('minim', 'minims', 'min', Decimal(1), us_minim_to_liter),
+    'fluid_dram_us': Unit('fluid dram', 'fluid drams', 'fl dr', Decimal(60), us_minim_to_liter),
+    'teaspoon_us': Unit('teaspoon', 'teaspoons', 'tsp', Decimal(80), us_minim_to_liter),
+    'tablespoon_us': Unit('tablespoon', 'tablespoons', 'Tbsp', Decimal(240), us_minim_to_liter),
+    'fluid_ounce_us': Unit('fluid ounce', 'US fluid ounces', 'fl oz', Decimal(480), us_minim_to_liter),
+    'shot_us': Unit('shot', 'shots', 'jig', Decimal('1.5') * _ounce_minim_multiple, us_minim_to_liter),
+    'gill_us': Unit('gill', 'gills', 'gil', Decimal(4) * _ounce_minim_multiple, us_minim_to_liter),
+    'cup_us': Unit('cup', 'cups', 'cp', Decimal(8) * _ounce_minim_multiple, us_minim_to_liter),
+    'pint_us': Unit('pint', 'pints', 'pt', Decimal(16) * _ounce_minim_multiple, us_minim_to_liter),
+    'quart_us': Unit('quart', 'quarts', 'qt', Decimal(32) * _ounce_minim_multiple, us_minim_to_liter),
+    'gallon_us': Unit('gallon', 'gallons', 'gal', Decimal(128) * _ounce_minim_multiple, us_minim_to_liter),
+    'barrel_us': Unit('barrel', 'barrels', 'bbl', Decimal('31.5') * Decimal(128) * _ounce_minim_multiple, us_minim_to_liter),
+}
 
