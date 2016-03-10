@@ -20,7 +20,7 @@ units = {  # type: UnitDict
     'pica_us': Unit("pica", "picas", "P/", Decimal(1) / Decimal(6), inch_to_meter),
     'inch_us': Unit("inch", "inches", "in", Decimal(1), inch_to_meter),
     'foot_us': Unit("foot", "feet", "ft", Decimal(12), inch_to_meter),
-    'yard_us': ("yard", "yards", "yd", Decimal(12 * 3), inch_to_meter),
+    'yard_us': Unit("yard", "yards", "yd", Decimal(12 * 3), inch_to_meter),
     'mile_us': Unit("mile", "miles", "mi", Decimal(12 * 5280), inch_to_meter),
 
     # BEGIN US SURVEY UNITS
