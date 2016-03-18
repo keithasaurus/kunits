@@ -1,9 +1,9 @@
 from decimal import Decimal
 
-from ..base import MetricTransform, Dimension, Unit, UnitDict
+from ..base import StandardTransform, Dimension, Unit, UnitDict
 
-us_pound_to_gram = MetricTransform(
-    to_metric=Decimal('453.59237'),
+us_pound_to_gram = StandardTransform(
+    to_standard=Decimal('453.59237'),
     dimension=Dimension.volume,
 )
 

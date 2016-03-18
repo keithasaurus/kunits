@@ -1,9 +1,9 @@
 from decimal import Decimal
 
-from ..base import MetricTransform, Dimension, Unit, UnitDict
+from ..base import StandardTransform, Dimension, Unit, UnitDict
 
-us_minim_to_liter = MetricTransform(
-    to_metric=Decimal(".000061611519921875"),
+us_minim_to_liter = StandardTransform(
+    to_standard=Decimal(".000061611519921875"),
     dimension=Dimension.volume
 )
 

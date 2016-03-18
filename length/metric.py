@@ -1,13 +1,13 @@
 from decimal import Decimal
 
 from kunits.base import UnitDict
-from ..base import generate_metric_units, MetricTransform, Dimension
+from ..base import generate_metric_units, StandardTransform, Dimension
 
-meter_to_meter = MetricTransform(
-    to_metric=Decimal("1"),
+meter_to_meter = StandardTransform(
+    to_standard=Decimal("1"),
     dimension=Dimension.length,
 )
 
 units = {  # type: UnitDict
-    unit.name: unit for unit in generate_metric_units(name='meter', abbrev='m', metric_transform=meter_to_meter)
+    unit.name: unit for unit in generate_metric_units(name='meter', abbrev='m', standard_transform=meter_to_meter)
 }

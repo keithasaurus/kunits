@@ -10,8 +10,8 @@ class Dimension(Enum):
     length = 30
 
 
-MetricTransform = NamedTuple('MetricTransform', (
-    ('to_metric', Decimal),
+StandardTransform = NamedTuple('StandardTransform', (
+    ('to_standard', Decimal),
     ('dimension', Dimension),
 ))
 
@@ -20,7 +20,7 @@ Unit = NamedTuple('Unit', (
     ('name_plural', str),
     ('abbrev', str),
     ('transform_multiple', Decimal),
-    ('metric_transform', MetricTransform)
+    ('standard_transform', StandardTransform)
 ))
 
 
@@ -28,14 +28,14 @@ Unit = NamedTuple('Unit', (
 UnitDict = Dict[str, Unit]
 
 
-def generate_metric_units(name: str, abbrev: str, metric_transform: MetricTransform) -> Tuple[Unit, ...]:
+def generate_metric_units(name: str, abbrev: str, standard_transform: StandardTransform) -> Tuple[Unit, ...]:
     return tuple(
         Unit(
             name="{}{}".format(prefix, name),
             name_plural="{}{}s".format(prefix, name),
             abbrev="{}{}".format(prefix_abbrev, abbrev),
             transform_multiple=multiple,
-            metric_transform=metric_transform
+            standard_transform=standard_transform
         ) for prefix, prefix_abbrev, multiple in (
             ("yotta", "Y",  Decimal("1e24")),
             ("zetta", "Z",  Decimal("1e21")),

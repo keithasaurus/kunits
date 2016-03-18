@@ -1,14 +1,14 @@
 from decimal import Decimal
 
-from ..base import Unit, MetricTransform, Dimension, UnitDict
+from ..base import Unit, StandardTransform, Dimension, UnitDict
 
-inch_to_meter = MetricTransform(
-    to_metric=Decimal('.0254'),
+inch_to_meter = StandardTransform(
+    to_standard=Decimal('.0254'),
     dimension=Dimension.length,
 )
 
-survey_foot_to_meter = MetricTransform(
-    to_metric=Decimal(1200)/Decimal(3937),
+survey_foot_to_meter = StandardTransform(
+    to_standard=Decimal(1200)/Decimal(3937),
     dimension=Dimension.length,
 )
 
