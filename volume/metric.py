@@ -9,6 +9,6 @@ liter_to_liter = StandardTransform(
 )
 
 units = {  # type: UnitDict
-    unit.name: unit for unit in generate_metric_units(name='liter', abbrev='l', standard_transform=liter_to_liter)
+    unit.name: unit for unit
+    in generate_metric_units(name='liter', abbrev='l', standard_transform=liter_to_liter)
 }
-

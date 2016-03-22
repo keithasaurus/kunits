@@ -11,4 +11,3 @@ def convert_unit(from_unit: Unit, to_unit: Unit) -> Decimal:
     else:
         return (from_unit.transform_multiple * from_unit.standard_transform.to_standard) / \
                (to_unit.transform_multiple * to_unit.standard_transform.to_standard)
-

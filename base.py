@@ -28,7 +28,9 @@ Unit = NamedTuple('Unit', (
 UnitDict = Dict[str, Unit]
 
 
-def generate_metric_units(name: str, abbrev: str, standard_transform: StandardTransform) -> Tuple[Unit, ...]:
+def generate_metric_units(name: str,
+                          abbrev: str,
+                          standard_transform: StandardTransform) -> Tuple[Unit, ...]:
     return tuple(
         Unit(
             name="{}{}".format(prefix, name),

@@ -21,7 +21,8 @@ class UnitsTestCase(unittest.TestCase):
             ConversionFactor(Decimal(2), unit_registry['pint_us'], unit_registry['cup_us']),
             ConversionFactor(Decimal(4), unit_registry['quart_us'], unit_registry['cup_us']),
             ConversionFactor(Decimal(16), unit_registry['cup_us'], unit_registry['tablespoon_us']),
-            ConversionFactor(Decimal(3), unit_registry['tablespoon_us'], unit_registry['teaspoon_us']),
+            ConversionFactor(Decimal(3), unit_registry['tablespoon_us'],
+                             unit_registry['teaspoon_us']),
             ConversionFactor(Decimal(80), unit_registry['teaspoon_us'], unit_registry['minim_us']),
         )
 

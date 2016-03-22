@@ -29,14 +29,15 @@ units = {  # type: UnitDict
     'rod_us': Unit("rod", "rods", "rd", Decimal(16.5), survey_foot_to_meter),
     'chain_us': Unit("chain", "chains", "ch", Decimal(66), survey_foot_to_meter),
     'furlong_us': Unit("furlong", "furlongs", "fur", Decimal(10 * 66), survey_foot_to_meter),
-    'survey_mile_us': Unit("survey mile", "survey miles", "mi", Decimal(8 * 10 * 66), survey_foot_to_meter),
+    'survey_mile_us': Unit("survey mile", "survey miles", "mi", Decimal(8 * 10 * 66),
+                           survey_foot_to_meter),
     'league_us': Unit("league", "leagues", "lea", Decimal(3 * 8 * 10 * 66), survey_foot_to_meter),
     # END US SURVEY UNITS
 
     # BEGIN INTERNATIONAL NAUTICAL
     'fathom_us': Unit("fathom", "fathoms", "ftm", _fathon_multiple, inch_to_meter),
     'cable_us': Unit("cable", "cables", "cb", Decimal(120) * _fathon_multiple, inch_to_meter),
-    'nautical_mile_us': Unit("nautical mile", "nautical miles", "nmi", Decimal("8.439") * Decimal(120) * _fathon_multiple, inch_to_meter),
+    'nautical_mile_us': Unit("nautical mile", "nautical miles", "nmi",
+                             Decimal("8.439") * Decimal(120) * _fathon_multiple, inch_to_meter),
     # END INTERNATIONAL NAUTICAL
 }
-
