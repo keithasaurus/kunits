@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from kunits.base import UnitDict
+from kunits.base import UnitDict  # noqa
 from ..base import generate_metric_units, StandardTransform, Dimension
 
 gram_to_gram = StandardTransform(

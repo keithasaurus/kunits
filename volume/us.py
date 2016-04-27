@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from ..base import StandardTransform, Dimension, Unit, UnitDict
+from ..base import StandardTransform, Dimension, Unit, UnitDict  # noqa
 
 us_minim_to_liter = StandardTransform(
     to_standard=Decimal(".000061611519921875"),

@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from ..base import StandardTransform, Dimension, Unit, UnitDict
+from ..base import StandardTransform, Dimension, Unit, UnitDict  # noqa
 
 us_pound_to_gram = StandardTransform(
     to_standard=Decimal('453.59237'),

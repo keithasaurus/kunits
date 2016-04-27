@@ -1,1 +1,1 @@
-from .registry import unit_registry
+from .registry import unit_registry  # noqa

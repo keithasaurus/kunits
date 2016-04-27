@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from kunits.base import UnitDict
+from kunits.base import UnitDict  # noqa
 from ..base import StandardTransform, Dimension, Unit
 
 count_to_count = StandardTransform(

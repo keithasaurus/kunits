@@ -1,1 +1,1 @@
-from .count import units as count_units
+from .count import units as count_units  # noqa
