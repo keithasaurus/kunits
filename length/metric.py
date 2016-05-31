@@ -1,7 +1,6 @@
+from ..base import Dimension, generate_metric_units, StandardTransform
 from decimal import Decimal
-
 from kunits.base import UnitDict  # noqa
-from ..base import generate_metric_units, StandardTransform, Dimension
 
 meter_to_meter = StandardTransform(
     to_standard=Decimal("1"),

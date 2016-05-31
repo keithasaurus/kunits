@@ -1,10 +1,10 @@
-import unittest
 from decimal import Decimal
-from typing import NamedTuple
-
 from kunits.base import Unit
 from kunits.convert import convert_unit
 from kunits.registry import unit_registry
+from typing import NamedTuple
+
+import unittest
 
 ConversionFactor = NamedTuple("ConversionFactor", (
     ("expected_result", Decimal),

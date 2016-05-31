@@ -1,6 +1,5 @@
+from ..base import Dimension, StandardTransform, Unit, UnitDict  # noqa
 from decimal import Decimal
-
-from ..base import Unit, StandardTransform, Dimension, UnitDict  # noqa
 
 inch_to_meter = StandardTransform(
     to_standard=Decimal('.0254'),

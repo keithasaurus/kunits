@@ -1,7 +1,6 @@
+from ..base import Dimension, generate_metric_units, StandardTransform
 from decimal import Decimal
-
 from kunits.base import UnitDict  # noqa
-from ..base import generate_metric_units, StandardTransform, Dimension
 
 liter_to_liter = StandardTransform(
     to_standard=Decimal("1"),

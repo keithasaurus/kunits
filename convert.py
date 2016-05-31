@@ -1,6 +1,5 @@
-from decimal import Decimal
-
 from .base import Unit
+from decimal import Decimal
 
 
 def convert_unit(from_unit: Unit, to_unit: Unit) -> Decimal:

@@ -1,7 +1,6 @@
-from enum import Enum
-from typing import NamedTuple, Tuple, Dict
-
 from decimal import Decimal
+from enum import Enum
+from typing import Dict, NamedTuple, Tuple
 
 
 class Dimension(Enum):
