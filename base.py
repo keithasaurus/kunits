@@ -9,18 +9,18 @@ class Dimension(Enum):
     length = 30
 
 
-StandardTransform = NamedTuple('StandardTransform', (
+StandardTransform = NamedTuple('StandardTransform', [
     ('to_standard', Decimal),
     ('dimension', Dimension),
-))
+])
 
-Unit = NamedTuple('Unit', (
+Unit = NamedTuple('Unit', [
     ('name', str),
     ('name_plural', str),
     ('abbrev', str),
     ('transform_multiple', Decimal),
     ('standard_transform', StandardTransform)
-))
+])
 
 
 # formalize unit mapping

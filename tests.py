@@ -6,11 +6,11 @@ from typing import NamedTuple
 
 import unittest
 
-ConversionFactor = NamedTuple("ConversionFactor", (
+ConversionFactor = NamedTuple("ConversionFactor", [
     ("expected_result", Decimal),
     ("from_unit", Unit),
     ("to_unit", Unit),
-))
+])
 
 
 class UnitsTestCase(unittest.TestCase):

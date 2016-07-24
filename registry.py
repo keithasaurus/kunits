@@ -4,7 +4,7 @@ from .length import length_units
 from .mass import mass_units
 from .volume import volume_units
 
-unit_registry = {}
+unit_registry = {}  # type: UnitDict
 
 
 def register_units(units: UnitDict):
