@@ -7,6 +7,7 @@ class Dimension(Enum):
     mass = 10
     volume = 20
     length = 30
+    time = 40
 
 
 StandardTransform = NamedTuple('StandardTransform', [
