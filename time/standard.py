@@ -1,6 +1,5 @@
 from decimal import Decimal
-
-from kunits.base import StandardTransform, Dimension, Unit
+from kunits.base import Dimension, StandardTransform, Unit
 
 second_to_second = StandardTransform(
     to_standard=Decimal('1'),
