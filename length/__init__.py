@@ -1,4 +1,4 @@
-from ..base import UnitDict
+from ..base import UnitDict  # noqa: F401
 from .metric import units as metric_length_units
 from .us import units as us_length_units
 
