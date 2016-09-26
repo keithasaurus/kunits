@@ -9,5 +9,7 @@ meter_to_meter = StandardTransform(
 
 units = {  # type: UnitDict
     unit.name: unit for unit
-    in generate_metric_units(name='meter', abbrev='m', standard_transform=meter_to_meter)
+    in generate_metric_units(name='meter',
+                             abbrev='m',
+                             standard_transform=meter_to_meter)
 }

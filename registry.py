@@ -10,10 +10,12 @@ unit_registry = {}  # type: UnitDict
 
 def register_units(units: UnitDict):
     for unit_key, unit in units.items():
-        assert unit_key not in unit_registry, "{} already registered".format(unit.name)
+        assert unit_key not in unit_registry, "{} already registered".format(
+            unit.name)
 
         unit_registry[unit_key] = unit
 
 
-for unit_dict in (count_units, length_units, mass_units, volume_units, time_units):
+for unit_dict in (
+count_units, length_units, mass_units, volume_units, time_units):
     register_units(unit_dict)

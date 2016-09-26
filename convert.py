@@ -2,11 +2,17 @@ from .base import Unit
 from decimal import Decimal
 
 
-def convert_unit(from_unit: Unit, to_unit: Unit) -> Decimal:
-    assert from_unit.standard_transform.dimension == to_unit.standard_transform.dimension
+def convert_unit(from_: Unit, to: Unit) -> Decimal:
+    assert from_.standard_transform.dimension == to.standard_transform.dimension
 
-    if from_unit.standard_transform == to_unit.standard_transform:
-        return from_unit.transform_multiple / to_unit.transform_multiple
+    if from_.standard_transform == to.standard_transform:
+        return from_.transform_multiple / to.transform_multiple
     else:
-        return (from_unit.transform_multiple * from_unit.standard_transform.to_standard) / \
-               (to_unit.transform_multiple * to_unit.standard_transform.to_standard)
+
+        return (
+            from_.transform_multiple *
+            from_.standard_transform.to_standard
+        ) / (
+            to.transform_multiple *
+            to.standard_transform.to_standard
+        )
