@@ -8,7 +8,7 @@ from frozendict import frozendict
 
 
 def register_all_units():
-    unit_registry = {}
+    unit_registry = {}  # type: UnitDict
 
     def register_units(units: UnitDict):
         for unit_key, unit in units.items():
