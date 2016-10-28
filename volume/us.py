@@ -12,6 +12,12 @@ units = {  # type: UnitDict
     'minim_us': Unit('minim', 'minims', 'min', Decimal(1), us_minim_to_liter),
     'fluid_dram_us': Unit('fluid dram', 'fluid drams', 'fl dr', Decimal(60),
                           us_minim_to_liter),
+    # note that dash, pinch, and drop are not OFFICIAL,
+    # but are widely accepted as 1/8 tsp, 1/16 tsp and 1/96 tsp, respectively
+    'drop_us': Unit('drop', 'drops', 'dr', Decimal(5) / Decimal(6),
+                    us_minim_to_liter),
+    'pinch_us': Unit('pinch', 'pinches', 'pn', Decimal(5), us_minim_to_liter),
+    'dash_us': Unit('dash', 'dashes', 'ds', Decimal(10), us_minim_to_liter),
     'teaspoon_us': Unit('teaspoon', 'teaspoons', 'tsp', Decimal(80),
                         us_minim_to_liter),
     'tablespoon_us': Unit('tablespoon', 'tablespoons', 'Tbsp', Decimal(240),
