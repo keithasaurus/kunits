@@ -23,4 +23,5 @@ def register_all_units():
 
     return frozendict(unit_registry)
 
+
 unit_registry = register_all_units()  # type: UnitDict
