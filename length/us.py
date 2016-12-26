@@ -13,7 +13,7 @@ survey_foot_to_meter = StandardTransform(
 
 _fathon_multiple = Decimal(12 * 3 * 2)
 
-units = {  # type: UnitDict
+units: UnitDict = {
     'point_us': Unit("point", "points", "p",
                      Decimal(1) / Decimal(6) / Decimal(12), inch_to_meter),
     'pica_us': Unit("pica", "picas", "P/", Decimal(1) / Decimal(6),

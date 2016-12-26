@@ -6,7 +6,7 @@ us_pound_to_gram = StandardTransform(
     dimension=Dimension.volume,
 )
 
-units = {  # type: UnitDict
+units: UnitDict = {
     "dram_us": Unit("dram", "drams", "dr",
                     Decimal('1') / Decimal('16') / Decimal('8'),
                     us_pound_to_gram),

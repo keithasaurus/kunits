@@ -8,12 +8,11 @@ from frozendict import frozendict
 
 
 def register_all_units():
-    unit_registry = {}  # type: UnitDict
+    unit_registry: UnitDict = {}
 
     def register_units(units: UnitDict):
         for unit_key, unit in units.items():
-            assert unit_key not in unit_registry, "{} already registered".format(
-                unit.name)
+            assert unit_key not in unit_registry, f"{unit.name} already registered"
 
             unit_registry[unit_key] = unit
 
@@ -24,4 +23,4 @@ def register_all_units():
     return frozendict(unit_registry)
 
 
-unit_registry = register_all_units()  # type: UnitDict
+unit_registry: UnitDict = register_all_units()

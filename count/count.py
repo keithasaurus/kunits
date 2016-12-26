@@ -7,7 +7,7 @@ count_to_count = StandardTransform(
     dimension=Dimension.volume,
 )
 
-units = {  # type: UnitDict
+units: UnitDict = {
     'count': Unit('count', 'count', 'ct', Decimal(1), count_to_count),
     'dozen': Unit('dozen', 'dozen', 'doz', Decimal(12), count_to_count)
 }

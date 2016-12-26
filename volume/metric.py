@@ -7,7 +7,7 @@ liter_to_liter = StandardTransform(
     dimension=Dimension.volume,
 )
 
-units = {  # type: UnitDict
+units: UnitDict = {
     unit.name: unit for unit
     in generate_metric_units(name='liter',
                              abbrev='l',

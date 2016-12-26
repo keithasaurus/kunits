@@ -7,7 +7,7 @@ meter_to_meter = StandardTransform(
     dimension=Dimension.length,
 )
 
-units = {  # type: UnitDict
+units: UnitDict = {
     unit.name: unit for unit
     in generate_metric_units(name='meter',
                              abbrev='m',

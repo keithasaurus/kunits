@@ -8,7 +8,7 @@ us_minim_to_liter = StandardTransform(
 
 _ounce_minim_multiple = Decimal(480)
 
-units = {  # type: UnitDict
+units: UnitDict = {
     'minim_us': Unit('minim', 'minims', 'min', Decimal(1), us_minim_to_liter),
     'fluid_dram_us': Unit('fluid dram', 'fluid drams', 'fl dr', Decimal(60),
                           us_minim_to_liter),
