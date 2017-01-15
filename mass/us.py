@@ -3,7 +3,7 @@ from decimal import Decimal
 
 us_pound_to_gram = StandardTransform(
     to_standard=Decimal('453.59237'),
-    dimension=Dimension.volume,
+    dimension=Dimension.mass,
 )
 
 units: UnitDict = {
