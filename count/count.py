@@ -4,7 +4,7 @@ from kunits.base import UnitDict  # noqa
 
 count_to_count = StandardTransform(
     to_standard=Decimal("1"),
-    dimension=Dimension.volume,
+    dimension=Dimension.count,
 )
 
 units: UnitDict = {

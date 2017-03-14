@@ -8,6 +8,7 @@ class Dimension(Enum):
     volume = 20
     length = 30
     time = 40
+    count = 50
 
 
 class StandardTransform(NamedTuple):
