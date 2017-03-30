@@ -1,6 +1,6 @@
 from decimal import Decimal
 from enum import Enum
-from typing import Dict, NamedTuple, Tuple
+from typing import Dict, NamedTuple, Tuple, Mapping
 
 
 class Dimension(Enum):
@@ -25,7 +25,7 @@ class Unit(NamedTuple):
 
 
 # formalize unit mapping
-UnitDict = Dict[str, Unit]
+UnitDict = Mapping[str, Unit]
 
 
 def generate_metric_units(name: str,
