@@ -4,24 +4,29 @@ from .mass import mass_units
 from .time import time_units
 from .volume import volume_units
 from kunits.base import Unit
-from types import MappingProxyType
-from typing import Dict, Mapping, Tuple
+from types import SimpleNamespace
+from typing import Dict, List, Tuple
 
 
-def register_all_units():
-    _unit_registry: Dict[str, Unit] = {}
+def _register_units(unit_groups: List[Tuple[Unit, ...]]) -> Dict[str, Unit]:
+    unit_registry: Dict[str, Unit] = {}
 
-    def register_units(units: Tuple[Unit]):
+    def register_units(units: Tuple[Unit, ...]):
         for unit in units:
-            assert unit.id not in _unit_registry, f"{unit.id} already registered"
+            assert unit.id not in unit_registry, f"{unit.id} already registered"
 
-            _unit_registry[unit.id] = unit
+            unit_registry[unit.id] = unit
 
-    for unit_dict in [count_units, length_units, mass_units,
-                      volume_units, time_units]:
-        register_units(unit_dict)
+    for units in unit_groups:
+        register_units(units)
 
-    return MappingProxyType(_unit_registry)
+    return unit_registry
 
 
-unit_registry: Mapping[str, Unit] = register_all_units()
+units = SimpleNamespace(**_register_units([
+    count_units,
+    length_units,
+    mass_units,
+    volume_units,
+    time_units
+]))
