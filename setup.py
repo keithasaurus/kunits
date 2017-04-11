@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-import os
 from distutils.core import setup
 
+import os
 
 
 def get_packages(package):
@@ -15,7 +15,7 @@ def get_packages(package):
 
 setup(
     name='kunits',
-    version='0.0.2',
+    version='0.0.3',
     license='MIT',
     description='Unit conversion library',
     author='Keith Philpott',
