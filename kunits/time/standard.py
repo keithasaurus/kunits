@@ -16,8 +16,4 @@ units = (
     Unit("day", "day", "days", "day", _day_multiple, second_to_second),
     Unit("week", "week", "weeks", "wk", _day_multiple * Decimal(7),
          second_to_second),
-    Unit("month", "month", "months", "mo", _day_multiple * 30,
-         second_to_second),
-    Unit("year", "year", "years", "yr", _day_multiple * Decimal(365),
-         second_to_second),
 )
