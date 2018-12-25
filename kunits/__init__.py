@@ -1,1 +1,1 @@
-from .registry import units  # noqa
+from .registry import units  # noqa: F401

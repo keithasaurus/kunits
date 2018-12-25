@@ -1,7 +1,7 @@
 from decimal import Decimal
 from kunits import units
-from kunits.base import Unit
 from kunits.convert import convert_unit
+from kunits.types import Unit
 from typing import NamedTuple
 
 import unittest
