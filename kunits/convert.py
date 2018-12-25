@@ -8,10 +8,6 @@ def convert_unit(from_: Unit, to: Unit) -> Decimal:
     if from_.standard_transform == to.standard_transform:
         return from_.transform_multiple / to.transform_multiple
     else:
-        return (
-            from_.transform_multiple *
-            from_.standard_transform.to_standard
-        ) / (
-            to.transform_multiple *
-            to.standard_transform.to_standard
-        )
+        from_mult = from_.transform_multiple * from_.standard_transform.to_standard
+        to_mult = to.transform_multiple * to.standard_transform.to_standard
+        return from_mult / to_mult
