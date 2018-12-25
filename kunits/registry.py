@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from .count import count_units
 from .length import length_units
 from .mass import mass_units
@@ -30,3 +32,13 @@ units = SimpleNamespace(**_register_units([
     volume_units,
     time_units
 ]))
+
+
+def unit_to_csv_row(unit: Unit) -> Tuple[str, str, str, str, str]:
+    transform_multiple, dimension = unit.standard_transform
+
+    return (unit.name,
+            unit.name_plural,
+            unit.abbrev,
+            str(unit.transform_multiple * transform_multiple),
+            str(dimension)[10:])
