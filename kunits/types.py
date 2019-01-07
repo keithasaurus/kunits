@@ -1,6 +1,6 @@
 from decimal import Decimal
 from enum import Enum
-from typing import Dict, Mapping, NamedTuple, Tuple
+from typing import NamedTuple, Tuple
 
 
 class Dimension(Enum):
@@ -11,23 +11,18 @@ class Dimension(Enum):
     count = 50
 
 
-class StandardTransform(NamedTuple):
-    to_standard: Decimal
-    dimension: Dimension
-
-
 class Unit(NamedTuple):
     id: str
     name: str
     name_plural: str
     abbrev: str
-    transform_multiple: Decimal
-    standard_transform: StandardTransform
+    multiple: Decimal
+    dimension: Dimension
 
 
 def generate_metric_units(name: str,
                           abbrev: str,
-                          standard_transform: StandardTransform
+                          dimension: Dimension
                           ) -> Tuple[Unit, ...]:
     return tuple(
         Unit(
@@ -35,8 +30,8 @@ def generate_metric_units(name: str,
             name=f"{prefix}{name}",
             name_plural=f"{prefix}{name}s",
             abbrev=f"{prefix_abbrev}{abbrev}",
-            transform_multiple=multiple,
-            standard_transform=standard_transform
+            multiple=multiple,
+            dimension=dimension
         ) for prefix, prefix_abbrev, multiple in (
             ("yotta", "Y", Decimal("1e24")),
             ("zetta", "Z", Decimal("1e21")),
